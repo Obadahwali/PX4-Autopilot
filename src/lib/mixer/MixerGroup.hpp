@@ -163,6 +163,8 @@ public:
 
 	void				set_airmode(Mixer::Airmode airmode);
 
+	void				set_mc_tq(int32_t mc_tq);
+
 	unsigned			get_multirotor_count();
 
 	void 				set_dt_once(float dt);

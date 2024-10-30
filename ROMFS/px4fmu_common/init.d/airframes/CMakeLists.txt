@@ -87,13 +87,38 @@ px4_add_romfs_files(
 	4080_zmr250
 	4090_nanomind
 	4100_tiltquadrotor
+	4140_Tetraquad_one
 	4250_teal
 	4500_clover4
 	4900_crazyflie
 	4901_crazyflie21
 
-	# [5000, 5999] Quadrotor +"
+	# [5000, 5099] Quadrotor +"
 	5001_quad_+
+	
+	# [5100, 5199] TetraQuad_four"
+	5101_Tetraquad_top
+	5102_Tetraquad_front
+	5103_Tetraquad_left
+	5104_Tetraquad_right
+
+	# [5200, 5299] TetraQuad_sixteen"
+	5201_Tetraquad_top_top
+	5202_Tetraquad_top_front
+	5203_Tetraquad_top_left
+	5204_Tetraquad_top_right
+	5211_Tetraquad_front_top
+	5212_Tetraquad_front_front
+	5213_Tetraquad_front_left
+	5214_Tetraquad_front_right
+	5221_Tetraquad_left_top
+	5222_Tetraquad_left_front
+	5223_Tetraquad_left_left
+	5224_Tetraquad_left_right
+	5231_Tetraquad_right_top
+	5232_Tetraquad_right_front
+	5233_Tetraquad_right_left
+	5234_Tetraquad_right_right
 
 	# [6000, 6999] Hexarotor x"
 	6001_hexa_x

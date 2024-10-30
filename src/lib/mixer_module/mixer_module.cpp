@@ -114,6 +114,8 @@ void MixingOutput::updateParams()
 
 		_mixers->set_thrust_factor(_param_thr_mdl_fac.get());
 		_mixers->set_airmode((Mixer::Airmode)_param_mc_airmode.get());
+		_mixers->set_mc_tq(_param_mc_tq.get());
+
 	}
 }
 

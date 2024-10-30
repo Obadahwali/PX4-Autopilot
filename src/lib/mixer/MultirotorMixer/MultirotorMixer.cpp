@@ -328,6 +328,47 @@ MultirotorMixer::mix(float *outputs, unsigned space)
 	// clean out class variable used to capture saturation
 	_saturation_status.value = 0;
 
+		// We can add an extra code here
+	int new_geometry_value = 0;
+	if(_mc_tq == 1) // front
+	{
+		// printf("new_geometry_value = 5101\r\n");
+		new_geometry_value = 15;
+		// std::cout <<  _config_index[new_geometry_value] ;
+		// const Rotor *newArr = _config_index[new_geometry_value];
+		// rotors = _config_index[new_geometry_value]
+		// const Rotor *_config_index[new_geometry_value]
+	 	_rotors = _config_index[new_geometry_value];
+	}
+	else if(_mc_tq == 2) // top
+	{
+		new_geometry_value = 18;
+		// std::cout <<  new_geometry_value ;
+		// rotors = _config_index[new_geometry_value]
+		// const Rotor *_config_index[new_geometry_value]
+	 	_rotors = _config_index[new_geometry_value];
+
+	}
+	else if(_mc_tq == 3) // right
+	{
+		new_geometry_value = 17;
+		// std::cout <<  new_geometry_value ;
+		// rotors = _config_index[new_geometry_value]
+		// const Rotor *_config_index[new_geometry_value]
+	 	_rotors = _config_index[new_geometry_value];
+		// _rotors[3].roll_scale = -0.862484;
+	}
+	else if(_mc_tq == 4) // left
+	{
+		new_geometry_value = 16;
+		// std::cout <<  new_geometry_value ;
+		// rotors = _config_index[new_geometry_value]
+		// const Rotor *_config_index[new_geometry_value]
+	 	_rotors = _config_index[new_geometry_value];
+		
+	}
+
+
 	// Do the mixing using the strategy given by the current Airmode configuration
 	switch (_airmode) {
 	case Airmode::roll_pitch:

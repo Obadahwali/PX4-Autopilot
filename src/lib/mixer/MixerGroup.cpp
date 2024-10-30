@@ -136,6 +136,14 @@ MixerGroup::set_airmode(Mixer::Airmode airmode)
 	}
 }
 
+void
+MixerGroup::set_mc_tq(int32_t mc_tq)
+{
+	for (auto mixer : _mixers) {
+		mixer->set_mc_tq(mc_tq);
+	}
+}
+
 unsigned
 MixerGroup::get_multirotor_count()
 {

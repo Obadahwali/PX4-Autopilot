@@ -72,6 +72,27 @@ px4_add_romfs_files(
 	quad_+.main.mix
 	quad_s250aq.main.mix
 	quad_+_vtol.main.mix
+	quad_tq.main.mix
+	quad_tq_front.main.mix
+	quad_tq_left.main.mix
+	quad_tq_right.main.mix
+	quad_tq_top.main.mix
+	quad_tq_top_top.main.mix
+	quad_tq_top_front.main.mix
+	quad_tq_top_left.main.mix
+	quad_tq_top_right.main.mix
+	quad_tq_front_top.main.mix
+	quad_tq_front_front.main.mix
+	quad_tq_front_left.main.mix
+	quad_tq_front_right.main.mix
+	quad_tq_left_top.main.mix
+	quad_tq_left_front.main.mix
+	quad_tq_left_left.main.mix
+	quad_tq_left_right.main.mix
+	quad_tq_right_top.main.mix
+	quad_tq_right_front.main.mix
+	quad_tq_right_left.main.mix
+	quad_tq_right_right.main.mix	
 	quad_w.main.mix
 	quad_x_cw.main.mix
 	quad_x.main.mix

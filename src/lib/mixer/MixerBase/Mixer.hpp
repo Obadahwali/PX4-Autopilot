@@ -227,6 +227,8 @@ public:
 	 */
 	virtual void			set_airmode(Airmode airmode) {};
 
+	virtual void			set_mc_tq(int32_t mc_tq) {};
+
 	virtual unsigned		get_multirotor_count()  { return 0; }
 
 	virtual void 			set_dt_once(float dt) {}

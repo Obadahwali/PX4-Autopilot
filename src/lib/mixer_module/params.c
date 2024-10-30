@@ -33,3 +33,19 @@ PARAM_DEFINE_INT32(MC_AIRMODE, 0);
  * @group Mixer Output
  */
 PARAM_DEFINE_INT32(MOT_ORDERING, 0);
+
+/**
+ * Multicopter TetraQuad Parameter (MC_TQ).
+ *
+ * choose the tetraQuad mixer value.
+ *
+ * @value 0 Disabled
+ * @value 1 Front TQ mixer
+ * @value 2 Top TQ mixer
+ * @value 3 Right TQ mixer
+ * @value 4 Left TQ mixer
+ *
+ * @group Mixer Output
+ */
+PARAM_DEFINE_INT32(MC_TQ, 0);
+

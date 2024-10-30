@@ -46,6 +46,27 @@ set(geometry_files
 	quad_h.toml
 	quad_plus.toml
 	quad_s250aq.toml
+	quad_tq.toml
+	quad_tq_front.toml
+	quad_tq_left.toml
+	quad_tq_right.toml
+	quad_tq_top.toml
+	quad_tq_top_top.toml
+	quad_tq_top_front.toml
+	quad_tq_top_left.toml
+	quad_tq_top_right.toml
+	quad_tq_front_top.toml
+	quad_tq_front_front.toml
+	quad_tq_front_left.toml
+	quad_tq_front_right.toml
+	quad_tq_left_top.toml
+	quad_tq_left_front.toml
+	quad_tq_left_left.toml
+	quad_tq_left_right.toml
+	quad_tq_right_top.toml
+	quad_tq_right_front.toml
+	quad_tq_right_left.toml
+	quad_tq_right_right.toml
 	quad_vtail.toml
 	quad_wide.toml
 	quad_x_cw.toml
