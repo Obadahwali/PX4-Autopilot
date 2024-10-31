@@ -1173,14 +1173,52 @@ PX4IO::task_main()
 				parm_handle = param_find("MC_AIRMODE");
 
 				if (parm_handle != PARAM_INVALID) {
+					// mavlink_log_emergency(&_mavlink_log_pub, "MC_AIRMODE");
 					int32_t param_val_int;
 					param_get(parm_handle, &param_val_int);
 					(void)io_reg_set(PX4IO_PAGE_SETUP, PX4IO_P_SETUP_AIRMODE, SIGNED_TO_REG(param_val_int));
 				}
 
+				// /* mc_tq */
+				// parm_handle = param_find("MC_TQ");
+				// if (parm_handle != PARAM_INVALID) {
+				// 	mavlink_log_emergency(&_mavlink_log_pub, "MC_TQ");
+				// 	int32_t param_val_int;
+				// 	param_get(parm_handle, &param_val_int);
+				// 	mavlink_log_emergency(&_mavlink_log_pub, "int %d", param_val_int);
+				// 	(void)io_reg_set(PX4IO_PAGE_SETUP, PX4IO_P_SETUP_MC_TQ, SIGNED_TO_REG(param_val_int));
+				// }
+
 				update_params();
 			}
 
+		}
+		else if (_armed && (now >= orb_check_last + ORB_CHECK_INTERVAL)) {
+			orb_check_last = now;
+
+			if (_parameter_update_sub.updated() || _param_update_force) {
+				// clear update
+				parameter_update_s pupdate;
+				_parameter_update_sub.copy(&pupdate);
+
+				_param_update_force = false;
+
+				mavlink_log_emergency(&_mavlink_log_pub, "param updated");
+
+				param_t parm_handle;
+
+				/* mc_tq */
+				parm_handle = param_find("MC_TQ");
+				if (parm_handle != PARAM_INVALID) {
+					mavlink_log_emergency(&_mavlink_log_pub, "MC_TQ");
+					int32_t param_val_int;
+					param_get(parm_handle, &param_val_int);
+					mavlink_log_emergency(&_mavlink_log_pub, "int %d", param_val_int);
+					(void)io_reg_set(PX4IO_PAGE_SETUP, PX4IO_P_SETUP_MC_TQ, SIGNED_TO_REG(param_val_int));
+				}
+
+				// update_params();
+			}
 		}
 
 		perf_end(_perf_update);

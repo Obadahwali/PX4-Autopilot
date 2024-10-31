@@ -142,6 +142,8 @@ public:
 		roll_pitch_yaw = 2
 	};
 
+	int32_t				_mc_tq{0};
+
 	/**
 	 * Fetch a control value.
 	 *

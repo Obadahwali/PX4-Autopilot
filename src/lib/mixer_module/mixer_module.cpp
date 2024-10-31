@@ -105,6 +105,7 @@ void MixingOutput::printStatus() const
 void MixingOutput::updateParams()
 {
 	ModuleParams::updateParams();
+	// _mixers->set_mc_tq(_param_mc_tq.get());
 
 	// update mixer if we have one
 	if (_mixers) {
@@ -400,6 +401,8 @@ bool MixingOutput::update()
 
 	/* do mixing */
 	float outputs[MAX_ACTUATORS] {};
+	// ModuleParams::updateParams();
+	// _mixers->set_mc_tq(4);
 	const unsigned mixed_num_outputs = _mixers->mix(outputs, _max_num_outputs);
 
 	/* the output limit call takes care of out of band errors, NaN and constrains */

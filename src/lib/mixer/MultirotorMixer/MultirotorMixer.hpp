@@ -247,7 +247,7 @@ private:
 
 	Airmode				_airmode{Airmode::disabled};
 
-	int32_t				_mc_tq{0};
+	// int32_t				_mc_tq{0};
 
 	saturation_status		_saturation_status{};
 

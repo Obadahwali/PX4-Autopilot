@@ -56,6 +56,7 @@ MixerGroup::mix(float *outputs, unsigned space)
 	unsigned index = 0;
 
 	for (auto mixer : _mixers) {
+		// mixer->_mc_tq = 4;
 		index += mixer->mix(outputs + index, space - index);
 
 		if (index >= space) {
@@ -140,6 +141,7 @@ void
 MixerGroup::set_mc_tq(int32_t mc_tq)
 {
 	for (auto mixer : _mixers) {
+		// mixer->_mc_tq = 4;
 		mixer->set_mc_tq(mc_tq);
 	}
 }

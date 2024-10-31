@@ -330,9 +330,10 @@ MultirotorMixer::mix(float *outputs, unsigned space)
 
 		// We can add an extra code here
 	int new_geometry_value = 0;
-	if(_mc_tq == 1) // front
+	// _mc_tq = 4;
+	if(_mc_tq == 1) // front 5102
 	{
-		// printf("new_geometry_value = 5101\r\n");
+		// printf("new_geometry_value = 5102\r\n");
 		new_geometry_value = 15;
 		// std::cout <<  _config_index[new_geometry_value] ;
 		// const Rotor *newArr = _config_index[new_geometry_value];
@@ -340,7 +341,7 @@ MultirotorMixer::mix(float *outputs, unsigned space)
 		// const Rotor *_config_index[new_geometry_value]
 	 	_rotors = _config_index[new_geometry_value];
 	}
-	else if(_mc_tq == 2) // top
+	else if(_mc_tq == 2) // top 5101
 	{
 		new_geometry_value = 18;
 		// std::cout <<  new_geometry_value ;
@@ -349,8 +350,9 @@ MultirotorMixer::mix(float *outputs, unsigned space)
 	 	_rotors = _config_index[new_geometry_value];
 
 	}
-	else if(_mc_tq == 3) // right
+	else if(_mc_tq == 3) // right 5104
 	{
+
 		new_geometry_value = 17;
 		// std::cout <<  new_geometry_value ;
 		// rotors = _config_index[new_geometry_value]
@@ -358,7 +360,7 @@ MultirotorMixer::mix(float *outputs, unsigned space)
 	 	_rotors = _config_index[new_geometry_value];
 		// _rotors[3].roll_scale = -0.862484;
 	}
-	else if(_mc_tq == 4) // left
+	else if(_mc_tq == 4) // left 5103
 	{
 		new_geometry_value = 16;
 		// std::cout <<  new_geometry_value ;
@@ -367,7 +369,17 @@ MultirotorMixer::mix(float *outputs, unsigned space)
 	 	_rotors = _config_index[new_geometry_value];
 		
 	}
-
+	else if(_mc_tq == 0) // one module (base) 4140
+	{
+		// printf("new_geometry_value = 4140\r\n");
+		new_geometry_value = 14; //14;
+		// std::cout <<  _config_index[new_geometry_value] ;
+		// const Rotor *newArr = _config_index[new_geometry_value];
+		// rotors = _config_index[new_geometry_value]
+		// const Rotor *_config_index[new_geometry_value]
+	 	_rotors = _config_index[new_geometry_value];
+	}
+	// printf("_rotors[2].roll_scale = %.4f\r\n",(double)(_rotors[2].roll_scale));
 
 	// Do the mixing using the strategy given by the current Airmode configuration
 	switch (_airmode) {

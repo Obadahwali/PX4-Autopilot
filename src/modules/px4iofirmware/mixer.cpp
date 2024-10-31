@@ -256,6 +256,12 @@ mixer_tick()
 	 */
 	mixer_group.set_airmode((Mixer::Airmode)REG_TO_SIGNED(r_setup_airmode));
 
+	// int x = 0;
+	// if(REG_TO_SIGNED(r_setup_airmode) != 0) x = 4;
+	// mixer_group.set_mc_tq(x);
+
+	mixer_group.set_mc_tq(REG_TO_SIGNED(r_setup_mc_tq));
+
 
 	/*
 	 * Run the mixers.
